@@ -29,4 +29,9 @@ angular.module('calcApp')
 
 		// Set the stroke attribute of the circle to white
 		circle.attr('stroke', '#fff');
+		
+		$scope.evaluate = function() {
+			console.log('in evaluate');
+			MathJax.Hub.Queue(["Typeset",MathJax.Hub,"tex"]);
+		}
   });
