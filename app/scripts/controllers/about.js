@@ -31,7 +31,9 @@ angular.module('calcApp')
 		circle.attr('stroke', '#fff');
 		
 		$scope.evaluate = function() {
-			console.log('in evaluate');
+			// Evaluate #tex with mathJax
 			MathJax.Hub.Queue(["Typeset",MathJax.Hub,"tex"]);
 		}
+		
+		
   });
