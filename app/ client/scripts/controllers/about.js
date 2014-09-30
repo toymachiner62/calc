@@ -8,7 +8,7 @@
  * Controller of the calcApp
  */
 angular.module('calcApp')
-  .controller('AboutCtrl', function ($scope) {
+  .controller('AboutCtrl', function ($scope, CalcFactory) {
     
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
@@ -35,5 +35,10 @@ angular.module('calcApp')
 			MathJax.Hub.Queue(["Typeset",MathJax.Hub,"tex"]);
 		}
 		
+		CalcFactory.calculate(function(result) {
+			console.log(result);
+			$scope.image = result[0].subpods[0].image;
+			console.log($scope.image);
+		});
 		
   });
