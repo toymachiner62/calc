@@ -16,7 +16,7 @@ var Boom = require('boom');
  */
 exports.calculate = function (req, reply) {
 
-	wolframDao.calculate(function (err, data) {
+	wolframDao.calculate(req.params.equation, function (err, data) {
 		if (err) {
 			return reply(Boom.wrap(err));
 		}

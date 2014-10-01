@@ -13,11 +13,11 @@ var wolframAppId = 'QAH7L9-76P28363U4';
  *
  * @param callback
  */
-exports.calculate = function (callback) {
+exports.calculate = function(equation, callback) {
 	
 	var wolfram = require('wolfram').createClient(wolframAppId);
 	
-	wolfram.query("integrate 2x", function(err, result) {
+	wolfram.query(equation, function(err, result) {
 	  if(err) throw err
 	  console.log("Result: %j", result)
 		callback(null, result);

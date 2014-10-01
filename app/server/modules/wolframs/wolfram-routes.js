@@ -28,10 +28,15 @@ module.exports = function() {
 		
     {
       method: 'GET',
-      path: '/wolfram',
+      path: '/wolfram/{equation}',
       config : {
         description: 'Calculates an equation',
-        handler: wolframController.calculate
+        handler: wolframController.calculate,
+				validate: {
+					params: {
+						equation: Joi.string().trim().required()
+					}
+				}
       }
     }
 		
